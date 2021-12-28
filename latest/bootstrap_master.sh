@@ -12,3 +12,7 @@ kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://docs.projectca
 
 echo "[TASK 4] Generate and save cluster join command to /joincluster.sh"
 kubeadm token create --print-join-command > /joincluster.sh 2>/dev/null
+
+# FIXME - the command below return error and the script stops.
+# echo "[TASK 5] Remove taint from control-plane node"
+# kubectl taint nodes --all node-role.kubernetes.io/master-
